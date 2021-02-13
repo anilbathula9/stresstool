@@ -1,0 +1,4 @@
+FROM nginx
+LABEL maintainer="anilkumarbathula"
+RUN apt update -y && apt install -y iputils-ping stress
+CMD ["stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 10s"]
